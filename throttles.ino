@@ -97,20 +97,24 @@ void loop() {
       // Gear lever up
       if (gear_down) {
         Joystick.pressButton(1);
+        delay(5);
         Serial.print("Retract");
         gear_down = false;
         gear_up = true;
       } else {
+        delay(5);
         Joystick.releaseButton(1);
       }
     } else if (value > 200) {
       // Gear lever down
       if (gear_up) {
         Joystick.pressButton(2);
+        delay(5);
         Serial.print("Extend");
         gear_down = true;
         gear_up = false;
       } else {
+        delay(5);
         Joystick.releaseButton(2);
       }
     }
